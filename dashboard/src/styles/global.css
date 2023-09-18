@@ -49,6 +49,10 @@
   }
 }
 
+*, ::before, ::after {
+  box-sizing: unset !important;
+}
+
 @layer base {
   * {
     @apply border-border;
