@@ -164,7 +164,7 @@ export const ChartsContainer = () => {
           date={date}
           setDate={setDate}
           className={cn(
-            "self-end outline outline-1 outline-slate-700 bg-opacity-10 bg-slate-500 rounded",
+            "self-end bg-opacity-10 bg-slate-500 rounded",
             {
               ["animate-pulse"]: isLoading,
               ["bg-opacity-20"]: isLoading,

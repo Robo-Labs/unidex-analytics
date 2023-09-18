@@ -39,7 +39,7 @@ export function StatCard({ title, valueKey, formatter }: StatCardProps) {
   return (
     <div
       className={cn(
-        "w-full flex flex-col gap-1 justify-center outline outline-1 outline-slate-700 bg-opacity-10 bg-slate-500 rounded-lg shadow-lg py-4 px-6",
+        "w-full flex flex-col gap-1 justify-center bg-opacity-10 bg-slate-500 rounded-lg shadow-lg py-4 px-6",
         {
           ["animate-pulse"]: isLoading,
           ["bg-opacity-20"]: isLoading,
