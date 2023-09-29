@@ -78,8 +78,9 @@ export const onClosePosition: EventHandlerFor<
   const pnlUsd = pnlFloat * (collateralPrice || 0);
   const priceFloat = bigIntToFloat(price, UNIT_DECIMALS);
 
-  const isFullClose =
-    bigIntToFloat(margin + fee, UNIT_DECIMALS) === position.margin;
+  const isFullClose = 
+    bigIntToFloat(margin + fee, UNIT_DECIMALS) === position.margin 
+    || sizeFloat === position.size;
 
   const trade = new Trade({
     _id: `${product.tradeCount}:${decodedProductId}:${currency}:${chainId}`,

@@ -20,3 +20,4 @@ export {
   tuple,
 } from "https://deno.land/x/valibot@v0.12.0/mod.ts";
 export { hexToString, zeroAddress } from "npm:viem";
+export { type HydratedDocument } from 'npm:mongoose'

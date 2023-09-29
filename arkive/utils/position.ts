@@ -1,4 +1,4 @@
-import { logger, Store } from "../deps.ts";
+import { HydratedDocument, logger, Store } from "../deps.ts";
 import { Position } from "../entities/position.ts";
 
 export const getPosition = async (
@@ -47,7 +47,8 @@ export const getPosition = async (
   return { position, isNewPosition };
 };
 
-export const savePosition = (params: { store: Store; data: any }) => {
+export const savePosition = async (params: { store: Store; data: HydratedDocument<Position> }) => {
   const { store, data } = params;
-  store.set(`position:${data._id}`, data.save().catch(logger("arkiver").error));
+  store.set(`position:${data._id}`, data);
+  await data.save().catch(logger("arkiver").error)
 };
