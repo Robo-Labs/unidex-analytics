@@ -29,14 +29,14 @@ export function CustomTooltip<
         })}
       </div>
       {active && payload && payload.length > 0 && (
-        <div className="flex flex-col gap-0 text-xs rounded bg-opacity-90 bg-slate-700 px-4 py-2">
+        <div className="gap-0 text-xs rounded bg-opacity-90 bg-slate-700 px-4 py-2">
           {payload.reverse().map((item, i) => (
-            <div key={i} className="flex items-center gap-2">
+            <div key={i} className="items-center gap-2">
               <div
                 className="w-2 h-2 rounded-full"
                 style={{ backgroundColor: item.color }}
               />
-              <div className="flex-1">{item.name}</div>
+              <div>{item.name}</div>
               <div>
                 {numberFormatter
                   ? numberFormatter.format(Number(item.value))
@@ -44,12 +44,12 @@ export function CustomTooltip<
               </div>
             </div>
           ))}
-          <div className="flex items-center gap-2">
+          <div className="items-center gap-2">
             <div
               className="w-2 h-2 rounded-full"
               style={{ backgroundColor: "#8884d8" }}
             />
-            <div className="flex-1 font-bold">{totalTitle ?? "Total"}</div>
+            <div className="font-bold">{totalTitle ?? "Total"}</div>
             <div className="font-bold">
               {numberFormatter
                 ? numberFormatter.format(total ?? 0)
